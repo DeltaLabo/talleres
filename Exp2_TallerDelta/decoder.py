@@ -19,7 +19,9 @@ fig = plt.figure()
 
 def temp_figure():
     ax1 = plt.subplot()
-    plt.plot(time_data,dist_data)
+    plt.plot(time_data[-100:],dist_data[-100:])
+    ax1.set(xlabel='time (s)', ylabel='distance (cm)',
+       title='VL53LOX measurements')
 
 
 while(True):
