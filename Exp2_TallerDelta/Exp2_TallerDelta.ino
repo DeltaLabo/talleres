@@ -51,7 +51,7 @@ void loop() {
   if (timer_flag)
   {
     distance = sensor.readRange()/10;
-    if (distance >= 300) distance = 300;
+    if (distance >= 150) distance = 0;
     Serial.write(header,2);
     Serial.write( (distance>>8) & 0xFF);
     Serial.write( (distance) & 0xFF);
