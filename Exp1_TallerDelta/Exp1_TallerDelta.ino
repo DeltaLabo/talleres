@@ -1,14 +1,14 @@
-//se definen las variables a utilizarse.
+//se definen las variables a utilizar.
 int azero = 0;
 float v = 0;
 float RT = 0;
 float T = 0;
-int sec = 0;
-int min = 0;
-int hou = 0;
+int seco = 0;
+int minu = 0;
+int hour = 0;
 char time_stamp [50];
 
-//se definen las constantes a utilizarse.
+//se definen las constantes a utilizar.
 #define RR 10240
 #define BETA 4100
 #define T0 298.15
@@ -37,7 +37,7 @@ void loop() {
   T = T - zero;
 
   //Función para poder imprimir el tiempo transcurrido en formato (00h:00m:00s).
-  sprintf(time_stamp, "%02d: %02d: %02d, ", hou, min, sec);
+  sprintf(time_stamp, "%02d: %02d: %02d, ", hour, minu, seco);
 
     //Se realiza un condicional, para determinar cuando se alcanza la temperatura crítica.
     if (T >= 28){ //Se detecta una temperatura mayor a 30 grados.
@@ -53,14 +53,14 @@ void loop() {
     }
 
   delay(1000); //Esperar un segundo entre mediciones.
-  sec++; //Aumenta el contador de segundos.
+  seco++; //Aumenta el contador de segundos.
 
-    if (sec >= 60){ //Si el contador de segundos llega a 60, pasa a aumentar los minutos.
-      sec = 0;
-      min++; 
+    if (seco >= 60){ //Si el contador de segundos llega a 60, pasa a aumentar los minutos.
+      seco = 0;
+      minu++; 
     }
-    if (min >= 60){ //Si el contador de minutos llega a 60, pasa a aumentar las horas.
-      min = 0;
-      hou++; 
+    if (minu >= 60){ //Si el contador de minutos llega a 60, pasa a aumentar las horas.
+      minu = 0;
+      hour++; 
     }
 }
