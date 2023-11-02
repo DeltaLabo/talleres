@@ -47,15 +47,19 @@ void TimerHandler()
 }
 
 void loop() {
-  //Serial.println(medicion_cm);
   if (timer_flag)
   {
+    // Se realiza medición y se convierte a centimetros
     distance = sensor.readRange()/10;
-    if (distance >= 150) distance = 0;
+    // Se establece como máximo 150 cm en caso que se alcance
+    if (distance >= 150) distance = 150;
+    // Se construye una trama con los datos:
+    // OxAA 0xDD (4 bytes con el dato medido, MSBF) OxAA 0xFF
     Serial.write(header,2);
     Serial.write( (distance>>8) & 0xFF);
     Serial.write( (distance) & 0xFF);
     Serial.write(footer,2);
+    // Se baja la bandera del timer
     timer_flag = 0;
   }
 }

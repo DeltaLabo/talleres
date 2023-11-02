@@ -1,10 +1,9 @@
-from serial import Serial
 import serial
 import matplotlib.pyplot as plt
 from drawnow import drawnow
 from datetime import datetime
 
-ser = serial.Serial('COM3', baudrate=9600, bytesize=8, parity='N', stopbits=1, timeout=1.5)
+ser = serial.Serial('COM4', baudrate=9600, bytesize=8, parity='N', stopbits=1, timeout=1.5)
 ser.close()
 ser.open()
 ser.flush()
