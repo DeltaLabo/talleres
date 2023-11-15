@@ -1,7 +1,8 @@
 // Incluir librería para el sensor
 #include "Adafruit_VL53L0X.h"
 // Hacer un #define para que la libreria TimerInterrupt cargue el Timer3
-#define USE_TIMER_3     true
+#define USE_TIMER_3 true
+
 // Incluir librería para interrupciones basadas en tiempo
 #include "TimerInterrupt.h"
 
@@ -14,7 +15,7 @@ uint8_t header[2]={0xAA,0xDD};
 uint8_t footer[2]={0xAA,0xFF};  
 
 // Definir el intervalo del timer en milisegundos
-#define TIMER_INTERVAL_MS        100
+#define TIMER_INTERVAL_MS 100
 
 // Definir una instacia del sensor del tipo "Adafruit_VL530X" y con el nombre "sensor"
 Adafruit_VL53L0X sensor = Adafruit_VL53L0X();
@@ -63,7 +64,3 @@ void loop() {
     timer_flag = 0;
   }
 }
-
-
-
-
