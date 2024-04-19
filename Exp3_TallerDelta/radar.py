@@ -25,12 +25,6 @@ if not arduinoPorts: # No se encontró algún arduino.
 arduinoData = serial.Serial(arduinoPorts[0])
 arduinoData.flushInput()
 
-# -----------------------------------------------------------------------------------------------------
-# DE ACÁ EN ADELANTE EL CÓDIGO ÚNICAMENTE SE CENTRA EN LA CREACIÓN DEL GRÁFICO PARA LA REPRESENTACIÓN
-# DEL RADAR. EN ESTA EXPERIENCIA NO SE CONTEMPLA QUE USTED ENTIENDA EL CÓMO CREAR ESTAS GRÁFICAS, POR
-# LO QUE NO ES NECESARIO ESTUDIARLO, SIN EMBARGO SE LE ALIENTA A QUE LO HAGA.
-# -----------------------------------------------------------------------------------------------------
-
 # Se le dan las propiedades a la ventana. 
 fig = plt.figure("Arduino Radar Scanner", facecolor='black')
 fig.set_dpi(180) # Resolución de la figura.
